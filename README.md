@@ -5,11 +5,12 @@ FlickNest is a Flutter application that fetches popular movies from the [TMDb AP
 ---
 
 ## Demo
-
 <video controls width="640">
   <source src="screenshots/demo.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
+<p><a href="screenshots/demo.mp4" target="_blank">Click here to view the demo video in your browser</a></p>
+
 
 ## Table of Contents
 
