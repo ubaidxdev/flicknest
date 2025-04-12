@@ -105,8 +105,6 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
   @override
   Widget build(BuildContext context) {
     return AppBackGround(
-      end: const Alignment(0, 2),
-      gradientColors: [const Color(0xFF0F3D40), const Color(0xFF0F3D40), const Color(0xFFD9D9D9)],
       child: Scaffold(
         resizeToAvoidBottomInset: false,
         body: Stack(

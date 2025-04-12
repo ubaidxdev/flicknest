@@ -120,8 +120,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> with SingleTickerPr
   @override
   Widget build(BuildContext context) {
     return AppBackGround(
-      end: const Alignment(0, 2),
-      gradientColors: const [Color(0xFF0F3D40), Color(0xFF0F3D40), Color(0xFFD9D9D9)],
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: Center(

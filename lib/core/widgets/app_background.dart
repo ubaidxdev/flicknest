@@ -4,8 +4,8 @@ class AppBackGround extends StatelessWidget {
   const AppBackGround({
     super.key,
     required this.child,
-    this.gradientColors = const [Color(0xFF0F3D40), Color(0xFF071B1D)],
-    this.end,
+    this.gradientColors = const [Color(0xff1C1E26), Color(0xff2A2F45), Color(0xFFD9D9D9)],
+    this.end = const Alignment(0, 2),
     this.begin,
   });
 
@@ -23,7 +23,7 @@ class AppBackGround extends StatelessWidget {
           gradient: LinearGradient(
             begin: begin ?? Alignment.topCenter,
             end: end ?? Alignment.bottomCenter,
-            colors: gradientColors ?? [Color(0xFF0F3D40), Color(0xFF071B1D)],
+            colors: gradientColors ?? [const Color(0xff1C1E26), const Color(0xff2A2F45)],
           ),
         ),
         child: child,

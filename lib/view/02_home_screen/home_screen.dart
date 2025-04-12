@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flicknest/core/providers/movie_provider.dart';
+import 'package:flicknest/core/providers/them_provider.dart';
 import 'package:flicknest/core/utils/app_colors.dart';
 import 'package:flicknest/core/utils/extension.dart';
 import 'package:flicknest/core/utils/files_path.dart';
@@ -138,10 +139,10 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     final provider = context.watch<MoviesProvider>();
+    final themeprovider = context.watch<ThemProvider>();
 
     return AppBackGround(
       child: Scaffold(
-        backgroundColor: Colors.transparent,
         appBar: AppBar(
           title: Row(
             children: [
@@ -157,27 +158,33 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           actions: [
             IconButton(
+              icon: Icon(
+                themeprovider.isDark ? Icons.dark_mode : Icons.light_mode,
+                color: AppColors.secondaryColor,
+              ),
+              onPressed: () {
+                themeprovider.toggleTheme();
+              },
+            ),
+            IconButton(
               icon: Icon(Icons.favorite_border, color: AppColors.secondaryColor),
               onPressed: () {
                 context.pushNamed(FavoriteMoviesScreen.name);
               },
             ),
           ],
-          bottom: PreferredSize(
-            preferredSize: const Size.fromHeight(40),
-            child: Align(
-              alignment: const Alignment(-0.8, 0.8),
-              child: Text(
-                'Popular Movies',
-                style: context.heading.copyWith(color: AppColors.secondaryColor),
-              ),
-            ),
-          ),
         ),
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             children: [
+              Align(
+                alignment: const Alignment(-0.8, 0.8),
+                child: Text(
+                  'Popular Movies',
+                  style: context.heading.copyWith(color: AppColors.secondaryColor),
+                ),
+              ),
               10.ph,
               ThemedSearchBar(onChanged: _onSearchChanged),
 

@@ -4,6 +4,13 @@ FlickNest is a Flutter application that fetches popular movies from the [TMDb AP
 
 ---
 
+## Demo
+
+<video controls width="640">
+  <source src="screenshots/demo.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
 ## Table of Contents
 
 - [Features](#features)
@@ -97,10 +104,11 @@ Follow these steps to set up and run the project locally:
 
 3. **Configure the TMDb API Key**
 
-   Create or update a configuration file (e.g., ![app_constants.dart](`lib/core/utils/app_constants.dart`)) with your TMDb API key:
+   Create or update a configuration file (e.g., [app_constants.dart](lib/core/utils/app_constants.dart)) with your TMDb API key:
 
    ```dart
-   const String tmdbApiKey = 'YOUR_API_KEY_HERE';
+    static const String apiKey = 'YOUR_TMDb_API_KEY'; // Replace with your actual API key
+    static const String accessToken = 'YOUR_ACCESS_TOKEN'; // Replace with your actual access token
    ```
 
 4. **Initialize SharedPreferences**
@@ -137,17 +145,21 @@ Follow these steps to set up and run the project locally:
 
 Below is an overview of the key screens in the app. (Ensure that your `screenshots` folder contains the following images: `splash.png`, `onboarding.png`, `home.png`, `favorite.png`, `movie_details.png`.)
 
-| Splash Screen                            | Onboarding Screen                                |
-| ---------------------------------------- | ------------------------------------------------ |
-| ![Splash Screen](screenshots/splash.png) | ![Onboarding Screen](screenshots/onboarding.png) |
+| Splash Screen                                  | Onboarding Screen                                      |
+| ---------------------------------------------- | ------------------------------------------------------ |
+| ![Splash Screen](screenshots/splashscreen.jpg) | ![Onboarding Screen](screenshots/onboardingscreen.jpg) |
 
-| Home Screen (Popular Movies)         | Favorite Screen                              |
-| ------------------------------------ | -------------------------------------------- |
-| ![Home Screen](screenshots/home.png) | ![Favorite Screen](screenshots/favorite.png) |
+| Home Screen (Popular Movies)               | Home Screen Light                               |
+| ------------------------------------------ | ----------------------------------------------- |
+| ![Home Screen](screenshots/homescreen.jpg) | ![Home Screen](screenshots/homescreenlight.jpg) |
 
-| Movie Details Screen                                   |
-| ------------------------------------------------------ |
-| ![Movie Details Screen](screenshots/movie_details.png) |
+| Movie Details Screen                                   | Movie Details Screen                                        |
+| ------------------------------------------------------ | ----------------------------------------------------------- |
+| ![Movie Details Screen](screenshots/detailsscreen.jpg) | ![Movie Details Screen](screenshots/detailsscreenlight.jpg) |
+
+| Favorite Screen                                    | Favorite Screen                                         |
+| -------------------------------------------------- | ------------------------------------------------------- |
+| ![Favorite Screen](screenshots/favoritescreen.jpg) | ![Favorite Screen](screenshots/favoritescreenlight.jpg) |
 
 ---
 

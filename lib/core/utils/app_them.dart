@@ -3,6 +3,74 @@ import 'package:flutter/material.dart';
 
 import 'app_colors.dart';
 
+final ThemeData appLightTheme = ThemeData(
+  brightness: Brightness.light,
+  primaryColor: AppColorsLight.primaryColor,
+  scaffoldBackgroundColor: AppColorsLight.backgroundColor,
+  canvasColor: AppColorsLight.backgroundColor,
+  cardColor: AppColorsLight.cardColor,
+  hintColor: AppColorsLight.greyColor,
+  fontFamily: AppConstants.fontRaleway,
+  useMaterial3: true,
+  appBarTheme: AppBarTheme(
+    backgroundColor: AppColorsLight.primaryColor,
+    elevation: 2,
+    iconTheme: const IconThemeData(color: Colors.white),
+    titleTextStyle: const TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.w600),
+  ),
+  drawerTheme: DrawerThemeData(
+    backgroundColor: AppColorsLight.primary2,
+    elevation: 0,
+    scrimColor: Colors.black45,
+  ),
+  inputDecorationTheme: InputDecorationTheme(
+    filled: true,
+    fillColor: AppColorsLight.textFieldColor,
+    hintStyle: TextStyle(color: AppColorsLight.greyColor),
+    border: OutlineInputBorder(borderRadius: BorderRadius.circular(8), borderSide: BorderSide.none),
+  ),
+  textTheme: TextTheme(
+    displayLarge: TextStyle(color: AppColorsLight.textColor),
+    displayMedium: TextStyle(color: AppColorsLight.textColor),
+    displaySmall: TextStyle(color: AppColorsLight.textColor),
+    headlineLarge: TextStyle(color: AppColorsLight.textColor),
+    headlineMedium: TextStyle(color: AppColorsLight.textColor),
+    headlineSmall: TextStyle(color: AppColorsLight.textColor),
+    titleLarge: const TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.w600),
+    titleMedium: const TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.w600),
+    titleSmall: const TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.w600),
+    bodyLarge: TextStyle(color: AppColorsLight.textColor),
+    bodyMedium: TextStyle(color: AppColorsLight.textColor, fontSize: 16),
+    bodySmall: TextStyle(color: AppColorsLight.textColor),
+    labelLarge: TextStyle(color: AppColorsLight.textColor),
+    labelMedium: TextStyle(color: AppColorsLight.textColor),
+    labelSmall: TextStyle(color: AppColorsLight.textColor),
+  ),
+  colorScheme: ColorScheme.fromSeed(
+    seedColor: AppColorsLight.primaryColor,
+    brightness: Brightness.light,
+    primary: AppColorsLight.primaryColor,
+    secondary: AppColorsLight.secondaryColor,
+    surface: AppColorsLight.backgroundColor,
+  ),
+  indicatorColor: AppColorsLight.secondaryColor,
+  searchBarTheme: SearchBarThemeData(
+    constraints: const BoxConstraints(maxWidth: double.infinity, minHeight: 50, maxHeight: 50),
+    textStyle: const WidgetStatePropertyAll(TextStyle(color: Colors.white)),
+    hintStyle: const WidgetStatePropertyAll(TextStyle(color: Colors.white)),
+    backgroundColor: WidgetStatePropertyAll(AppColorsLight.primaryColor),
+    side: WidgetStateProperty.resolveWith<BorderSide>((states) {
+      if (states.contains(WidgetState.focused)) {
+        return BorderSide(color: AppColorsLight.secondaryColor);
+      }
+      return const BorderSide(color: Colors.transparent);
+    }),
+    shadowColor: const WidgetStatePropertyAll(Colors.transparent),
+    elevation: const WidgetStatePropertyAll(1),
+    overlayColor: const WidgetStatePropertyAll(Colors.transparent),
+  ),
+);
+
 final ThemeData appTheme = ThemeData(
   brightness: Brightness.dark,
   primaryColor: AppColors.primaryColor,
@@ -66,7 +134,6 @@ final ThemeData appTheme = ThemeData(
       }
       return BorderSide(color: Colors.transparent);
     }),
-
     shadowColor: const WidgetStatePropertyAll(Colors.transparent),
     elevation: const WidgetStatePropertyAll(1),
     overlayColor: const WidgetStatePropertyAll(Colors.transparent),
